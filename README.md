@@ -121,7 +121,7 @@ cd interview-ai-backend && ./mvnw package   # 输出到 target/
 
 ## 配置文件
 
-后端 `application.yml` 示例见 `interview-ai-backend/src/main/resources/application.example.yml`。关键配置项：
+后端 `application.yml` 示例见 `interview-ai-backend/src/main/resources/application.yml`。关键配置项：
 
 | 配置项 | 说明 |
 |--------|------|
