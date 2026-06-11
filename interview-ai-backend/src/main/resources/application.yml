@@ -27,7 +27,7 @@ spring:
 
   ai:
     openai:
-      api-key: sk-0f80ffb2efe3499182240ab8f02d1823
+      api-key: xxxxxxxxxxxxxxxxx
       base-url: https://api.deepseek.com
       chat:
         options:
@@ -35,7 +35,7 @@ spring:
         enabled: true
   # EmbeddingModel
   dashscope:
-    api-key: sk-8828119004224e349eb01a235666d429
+    api-key: xxxxxxxxxxxxxxxxx
     embedding:
       enabled: true
       options:
