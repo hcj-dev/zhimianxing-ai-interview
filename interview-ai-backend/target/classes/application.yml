@@ -1,0 +1,73 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: interview-ai
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.100.128:3306/interview_ai?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&createDatabaseIfNotExist=true
+    username: root
+    password: 1234
+
+
+  data:
+    redis:
+      host: 192.168.100.128
+      port: 6379
+      password: 1234
+      database: 1
+      timeout: 3000ms
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  ai:
+    openai:
+      api-key: sk-0f80ffb2efe3499182240ab8f02d1823
+      base-url: https://api.deepseek.com
+      chat:
+        options:
+          model: deepseek-chat
+        enabled: true
+  # EmbeddingModel
+  dashscope:
+    api-key: sk-8828119004224e349eb01a235666d429
+    embedding:
+      enabled: true
+      options:
+        model: text-embedding-v4
+        dimensions: 1024          # 向量维度（v4 默认 1024）
+
+  rabbitmq:
+    host: 192.168.100.128
+    port: 5672
+    username: interviewai
+    password: 1234
+    virtual-host: /interview-ai
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+app:
+  upload-dir: ./uploads
+  qdrant:
+    host: 192.168.100.128
+    port: 6334
+
+jwt:
+  secret: ${JWT_SECRET:interview-ai-jwt-secret-key-change-in-production-2026}
+  expiration: 604800000
+
+logging:
+  level:
+    com.interviewai: debug
