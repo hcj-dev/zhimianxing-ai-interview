@@ -133,6 +133,4 @@ cd interview-ai-backend && ./mvnw package   # 输出到 target/
 | `app.qdrant` | Qdrant 向量数据库地址 |
 | `jwt.secret` | JWT 签名密钥（生产环境务必修改） |
 
-## 许可证
 
-MIT License
